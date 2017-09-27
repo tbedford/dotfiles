@@ -15,7 +15,6 @@
 ;; backup directory
 (setq backup-directory-alist (quote ((".*" ."~/.emacs.d/backups/"))))
 
-
 ;; Tabs
 (setq-default indent-tab-width 4)
 (setq-default tab-width 4)
@@ -53,6 +52,7 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+;; GitHub favoured markdown
 (autoload 'gfm-mode "markdown-mode"
    "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
@@ -67,6 +67,9 @@
 (setq auto-mode-alist
       (cons '("\\.\\(xml\\|xsl\\|rng\\|xhtml\\|dita\\|ditamap\\)\\'" . nxml-mode)
             auto-mode-alist))
+
+;; installed packages
+;; Note themes are listed *after* installed packages area so they can be trusted
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
