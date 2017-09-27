@@ -15,13 +15,6 @@
 ;; backup directory
 (setq backup-directory-alist (quote ((".*" ."~/.emacs.d/backups/"))))
 
-;; powerline
-(require 'powerline)
-(powerline-default-theme)
-
-;; airline themes
-(require 'airline-themes)
-(load-theme 'airline-light)
 
 ;; Tabs
 (setq-default indent-tab-width 4)
@@ -49,23 +42,20 @@
           '(lambda ()
              (c-set-style "stroustrup")))
 
-
 ;; PHP mode
 (setq auto-mode-alist
   (cons '("\\.php\\w?" . php-mode) auto-mode-alist))
 (autoload 'php-mode "php-mode" "PHP mode." t)
 
-
-;; Markdown mode
+;; Markdown modes
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-(autoload 'gfm-mode "gfm-mode"
+(autoload 'gfm-mode "markdown-mode"
    "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
-
 
 ;; AsciiDoc mode
 (add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
@@ -86,10 +76,18 @@
  '(custom-safe-themes
    (quote
     ("962dacd99e5a99801ca7257f25be7be0cebc333ad07be97efd6ff59755e6148f" default)))
- '(package-selected-packages (quote (airline-themes powerline adoc-mode))))
+ '(package-selected-packages (quote (markdown-mode airline-themes powerline adoc-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; powerline
+(require 'powerline)
+(powerline-default-theme)
+
+;; airline themes
+(require 'airline-themes)
+(load-theme 'airline-light)
