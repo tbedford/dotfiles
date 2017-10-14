@@ -9,6 +9,9 @@
 (display-time)
 (cua-mode t)
 
+;; ibuffer
+(defalias 'list-buffers 'ibuffer)
+
 ;; get hash key working on Apple Mac!
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
@@ -112,4 +115,5 @@
 ;;(require 'airline-themes)
 ;;(load-theme 'airline-light)
 
-;;(load-theme 'brin t)
+(load-theme 'hickey t)
+;;(load-theme 'manoj-dark t)
