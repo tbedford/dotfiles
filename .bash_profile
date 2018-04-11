@@ -1,3 +1,5 @@
+# From my standard bash file
+
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -15,7 +17,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\] \[\033[01;43m\][$(git branch 2>/dev/null | grep '^*' | colrm 1 2)]\[\033[00m\] \[\033[01;36m\]\$\[\033[00m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -30,7 +32,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # MySQL alias
-#alias mysql='/usr/local/mysql/bin/mysql'
+# alias mysql='/usr/local/mysql/bin/mysql'
 
 # Classpath
 # export CLASSPATH=/Users/tbedford/mysql-connector-java-5.1.24/mysql-connector-java-5.1.24-bin.jar:$CLASSPATH
@@ -61,3 +63,10 @@ man() {
     }
 
 #####
+
+
+# Added by Tony
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
