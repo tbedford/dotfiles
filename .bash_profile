@@ -17,7 +17,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\] \[\033[01;43m\][$(git branch 2>/dev/null | grep '^*' | colrm 1 2)]\[\033[00m\] \[\033[01;36m\]\$\[\033[00m\] '
+    PS1='\[\033[01;31m\]\u@\h\[\033[00m\]: \[\033[01;33m\]\w\[\033[00m\] \[\033[01;35m\][$(git branch 2>/dev/null | grep '^*' | colrm 1 2)]\[\033[00m\] \[\033[01;36m\]\$\[\033[00m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -70,3 +70,4 @@ man() {
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
+export PATH="/Users/abedford/ngrok:$PATH"
