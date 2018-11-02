@@ -29,8 +29,8 @@
 
 ;; M-up and M-down start of buffer/end of buffer
 ;; Notes:
-;; 1) only works in terminal if in Mac keyboard system settings you set Option key to Escape key
-;; 2) You need to switch off Use option key as Meta in terminal config
+;; 1) Only works in Desktop Emacs on Mac if in Mac keyboard system settings you set Option key to Escape key
+;; 2) You then need to switch off 'Use option key as Meta' in Terminal config for this to work in Terminal and Desktop
 (global-set-key [27 up] (quote beginning-of-buffer))
 (global-set-key [27 down] (quote end-of-buffer))
 
