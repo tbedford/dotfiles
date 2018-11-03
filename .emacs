@@ -27,18 +27,26 @@
 ;; get hash key working on Apple Mac!
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
-;; M-up and M-down start of buffer/end of buffer
-;; Notes:
-;; 1) Only works in Desktop Emacs on Mac if in Mac keyboard system settings you set Option key to Escape key
-;; 2) You then need to switch off 'Use option key as Meta' in Terminal config for this to work in Terminal and Desktop
+
+;; Terminal Emacs
 (global-set-key [27 up] (quote beginning-of-buffer))
 (global-set-key [27 down] (quote end-of-buffer))
+
+;; Desktop Emacs
+(global-set-key [(meta up)] 'beginning-of-buffer)
+(global-set-key [(meta down)] 'end-of-buffer)
+
+;; Also convenient
+(global-set-key (kbd "M-,") 'beginning-of-buffer)
+(global-set-key (kbd "M-.") 'end-of-buffer)
 
 ;; Custom keymaps
 (global-set-key "\C-cl" 'goto-line)
 (global-set-key "\C-ct" 'ansi-term)
 (global-set-key "\C-cs" 'shell)
 (global-set-key "\C-ch" 'help)
+
+
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
