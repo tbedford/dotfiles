@@ -8,10 +8,19 @@
 (display-time)
 (cua-mode t)
 (setq require-final-newline t) ;; Should be default but belt and braces for all modes!!
+(global-hl-line-mode +1)
+(delete-selection-mode 1)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(show-paren-mode 1)
 
 (setq-default indent-tab-width 4)
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
+
+;; fuzzy file opening
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
+(ido-mode t)
 
 (defalias 'list-buffers 'ibuffer)
 
@@ -19,7 +28,6 @@
 
 ;; get hash key working on Apple Mac!
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
-
 
 ;; Terminal Emacs
 (global-set-key [27 up] (quote beginning-of-buffer))
